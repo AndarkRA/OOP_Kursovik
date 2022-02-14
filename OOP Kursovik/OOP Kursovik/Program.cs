@@ -150,6 +150,42 @@ namespace FM
                     PathLine.GetFullDirectories(_pathOld, _pathNew);
                     break;
 
+                case "gf":
+                    Console.WriteLine(@"Произвести поиск файлов по маске в папке в формате 'd:\folder\text'");
+                    _pathOld = Console.ReadLine();
+
+                    Console.WriteLine(@"Произвести поиск файлов по маске файлов в формате '*.txt'");
+                    _pathNew = Console.ReadLine();
+
+                    PathLine.GetFullFiles(_pathOld, _pathNew);
+                    break;
+
+
+                case "ic":
+                    Console.WriteLine(@"Введите адрес папки для вычесления размера в формате 'd:\folder\text'");
+                    _pathOld = Console.ReadLine();
+
+
+                    PathLine.InfoCatalog(_pathOld);
+                    break;
+
+
+                case "if":
+                    Console.WriteLine(@"Введите адрес файла для вычисления данных о файле в формате 'd:\folder\text.txt'");
+                    _pathOld = Console.ReadLine();
+
+                    PathLine.InfoFile(_pathOld);
+                    break;
+
+
+
+                case "sf":
+                    Console.WriteLine(@"Введите адрес файла в формате 'd:\folder\text.txt'");
+                    _pathOld = Console.ReadLine();
+
+                    PathLine.TextFileStatistics(_pathOld);
+                    break;
+
 
                 case "af":
                     Console.WriteLine(@"Введите адрес файла для изменения атрибута только для чтения в формате 'd:\folder\text.txt'");
@@ -167,7 +203,27 @@ namespace FM
         }
         private static List<string> _allCommand = new List<string>()
         {
-
+            "help - выводит справочную информацию о командах",
+            "q- выход из программы",
+            "d- показать диски",
+            "show -показать содержимое диска или папки",
+            "'null' - выйти из каталога",
+            @"'cd' затем 'C:\Windows'- переход в данный каталог",
+            "'nc'- создать новую папку в данной директории",
+            "'nf'- создать новый файл в данной директории",
+            "'dc'- удалить папку в данной директории",
+            "'df'- удалить файл в данной директории",
+            "'mf'- переместить файл",
+            "'mc'- переместить папку",
+            "'rf'- переименовать файл",
+            "'cc'- копировать папку",
+            "'cf'- копировать файл",
+            "'gc'- поиск папок по маске",
+            "'gf'- поиск файлов по маске",
+            "'ic'- вычислить размер папки",
+            "'if'- вычислить размер файла",
+            "'sf'- статистические данные о файле",
+            "'af'- установить/удалить атрибут только для чтения в файле",
 
         };
 
